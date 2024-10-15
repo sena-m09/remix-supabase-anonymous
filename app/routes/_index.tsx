@@ -16,6 +16,9 @@ export default function Index() {
       <Form action="/signin" method="post">
         <button type="submit">ログイン</button>
       </Form>
+      <Form action="/signout" method="post">
+        <button type="submit">ログアウト</button>
+      </Form>
 
     </main>
   );
