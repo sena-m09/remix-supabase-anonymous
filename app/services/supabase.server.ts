@@ -1,5 +1,16 @@
-
 import { createServerClient, parseCookieHeader, serializeCookieHeader } from "@supabase/ssr";
+
+/**
+ * Supabaseクライアントを作成する関数。
+ * 
+ * @param {Request} request - クライアントからのリクエストオブジェクト。
+ * @returns {{ supabase: any, headers: Headers }} Supabaseクライアントとヘッダーオブジェクトを含むオブジェクト。
+ * 
+ * @example
+ * ```typescript
+ * const { supabase, headers } = supabaseClient(request);
+ * ```
+ */
 export const supabaseClient = (request: Request) => {
   const headers = new Headers();
 
