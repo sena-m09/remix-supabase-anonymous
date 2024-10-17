@@ -14,7 +14,6 @@ export const loader = async({ request }: LoaderFunctionArgs) => {
   const { data: { user } } = await supabase.auth.getUser();
 
   return json({ user });
-
 }
 
 export default function Index() {
