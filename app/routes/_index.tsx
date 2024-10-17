@@ -1,6 +1,6 @@
-import { type MetaFunction } from "@remix-run/node";
+import { type MetaFunction, type LoaderFunctionArgs } from "@remix-run/node";
 import { Form, json, useLoaderData } from "@remix-run/react";
-import { supabase } from "~/services/supabase.server";
+import { supabaseClient } from "~/services/supabase.server";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,7 +9,8 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export const loader = async() => {
+export const loader = async({ request }: LoaderFunctionArgs) => {
+  const { supabase } = supabaseClient(request);
   const { data: { user } } = await supabase.auth.getUser();
 
   return json({ user });
