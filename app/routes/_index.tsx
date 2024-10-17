@@ -1,6 +1,5 @@
 import { type MetaFunction } from "@remix-run/node";
-import { Form, json } from "@remix-run/react";
-import { useLoaderData } from "@remix-run/react";
+import { Form, json, useLoaderData } from "@remix-run/react";
 import { supabase } from "~/services/supabase.server";
 
 export const meta: MetaFunction = () => {
